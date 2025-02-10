@@ -1,0 +1,144 @@
+/* Основной контейнер */
+.todo-container {
+  width: 100%;
+  max-width: 900px; /* Увеличиваем максимальную ширину */
+  margin: 40px auto;
+  padding: 30px; /* Увеличиваем внутренние отступы */
+  background-color: #f4f4f9;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  font-family: 'Arial', sans-serif;
+}
+
+/* Заголовок */
+h2 {
+  text-align: center;
+  font-size: 24px;
+  color: #333;
+  margin-bottom: 20px;
+  font-weight: 900;
+}
+
+/* Группа ввода */
+.input-group {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 15px;
+}
+
+.input-group input {
+  flex-grow: 1;
+  padding: 10px;
+  border: 2px solid #ddd;
+  border-radius: 5px;
+  font-size: 16px;
+  transition: border-color 0.3s ease;
+}
+
+.input-group input:focus {
+  outline: none;
+  border-color: #5c9df6;
+}
+
+.input-group button {
+  padding: 10px 20px;
+  background-color: #5c9df6;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.input-group button:hover {
+  background-color: #3b77d6;
+}
+
+/* Список задач */
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px;
+  border-radius: 5px;
+  background-color: #fff;
+  margin-bottom: 10px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.3s ease;
+}
+
+li:hover {
+  background-color: #f1f1f1;
+}
+
+li .completed {
+  text-decoration: line-through;
+  color: #888;
+}
+
+/* Режим редактирования задачи */
+li div {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  width: 100%;
+}
+
+li input {
+  flex-grow: 1;
+  padding: 8px;
+  border: 2px solid #ddd;
+  border-radius: 5px;
+  font-size: 16px;
+  transition: border-color 0.3s ease;
+  max-width: 250px;
+}
+
+li input:focus {
+  outline: none;
+  border-color: #5c9df6;
+}
+
+/* Контейнер для кнопок сохранения и отмены */
+li div button {
+  padding: 6px 12px;
+  font-size: 14px;
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  width: 80px; /* Ограничиваем ширину кнопок */
+  margin-left: 10px; /* Отступ от кнопок */
+}
+
+/* Кнопка "Сохранить" */
+li div button:first-child {
+  background-color: #5c9df6;
+  color: white;
+}
+
+li div button:first-child:hover {
+  background-color: #3b77d6;
+}
+
+/* Кнопка "Отменить" */
+li div button:last-child {
+  background-color: #ff4747;
+  color: white;
+}
+
+li div button:last-child:hover {
+  background-color: #e63d3d;
+}
+
+li div button:focus {
+  outline: none;
+}

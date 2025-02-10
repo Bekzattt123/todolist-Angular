@@ -1,0 +1,28 @@
+<div class="todo-container">
+  <h2>To-Do List</h2>
+  <div class="input-group">
+    <input [(ngModel)]="newTodo" placeholder="Добавить задачу..." />
+    <button (click)="addTodo()">Добавить</button>
+  </div>
+
+  <ul>
+    <li *ngFor="let todo of todos">
+      <div *ngIf="!todo.isEditing">
+        <span [class.completed]="todo.completed" (click)="toggleCompletion(todo)">
+          {{ todo.text }}
+        </span>
+        <div class="buttons">
+          <button (click)="startEditing(todo)">✏️</button>
+          <button (click)="deleteTodo(todo.id)">❌</button>
+        </div>
+      </div>
+
+      <!-- Поле ввода для редактирования -->
+      <div *ngIf="todo.isEditing">
+        <input [(ngModel)]="todo.text" (blur)="updateTodoText(todo)" />
+        <button (click)="updateTodoText(todo)">Сохранить</button>
+        <button (click)="stopEditing(todo)">Отменить</button>
+      </div>
+    </li>
+  </ul>
+</div>
